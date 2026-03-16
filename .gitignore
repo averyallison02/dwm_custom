@@ -1,3 +1,7 @@
 # omit testing source files
 test_*
 a.out
+
+# ignore personal changes to autostart scripts
+dwm_autostart.sh
+dwm_autostart_background.sh
