@@ -1,0 +1,3 @@
+# omit testing source files
+test_*
+a.out

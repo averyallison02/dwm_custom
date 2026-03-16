@@ -41,6 +41,7 @@
 #endif /* XINERAMA */
 #include <X11/Xft/Xft.h>
 
+#include "custom.h"
 #include "drw.h"
 #include "util.h"
 
@@ -2158,6 +2159,7 @@ main(int argc, char *argv[])
 		die("pledge");
 #endif /* __OpenBSD__ */
 	scan();
+	autostart();
 	run();
 	cleanup();
 	XCloseDisplay(dpy);
