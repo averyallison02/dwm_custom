@@ -3,7 +3,8 @@
 
 # update clock when necessary
 while true; do
-    xsetroot -name "$( date +"%a %b %d %Y %I:%M %p" )"
+    DATE="$( date +'%a %b %d %Y %I:%M %p' )"
+    xsetroot -name " $DATE "
     sleep "$(expr 60 - $( date +"%S" ) )s"
 done &
 
