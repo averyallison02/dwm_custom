@@ -4,8 +4,9 @@
 # update changing information
 while true; do
     DATE="$( date +'%a %b %d %Y %I:%M %p' )"
+    CHARGESTATUS="$( [ $( cat /sys/class/power_supply/BAT1/status ) == 'Charging' ] && echo '+' || echo '-')"
     BATTERY="$( cat /sys/class/power_supply/BAT1/capacity )%"
-    xsetroot -name " $DATE -$BATTERY- "
+    xsetroot -name " $DATE $CHARGESTATUS$BATTERY$CHARGESTATUS "
     sleep 1s
 done &
 
