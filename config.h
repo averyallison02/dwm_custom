@@ -76,6 +76,10 @@ static const char *mute_vol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "t
 static const char *up_vol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%", NULL };
 static const char *down_vol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%", NULL };
 
+static const char *goal_kraken[] = { "mpg123", "/home/avery/audio/kraken.mp3", NULL };
+static const char *goal_torrent[] = { "mpg123", "/home/avery/audio/torrent.mp3", NULL };
+
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
@@ -113,9 +117,11 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
 	/* media keys */
-	{ 0,                            XF86XK_AudioMute, spawn,   {.v = mute_vol} },
-	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = down_vol} },
-	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = up_vol}   },
+	{ 0,                            XF86XK_AudioMute, spawn,   {.v = mute_vol } },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = down_vol } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = up_vol }   },
+	{ MODKEY|ShiftMask,             XK_k,       spawn,          { .v = goal_kraken } },
+	{ MODKEY|ShiftMask,             XK_t,       spawn,          { .v = goal_torrent } },
 };
 
 /* button definitions */
