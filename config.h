@@ -72,9 +72,9 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_nordblue1, "-nf", col_nordgray3, "-sb", col_nordblue2, "-sf", col_nordgray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
-static const char *mute_vol[] = { "pactl", "set-sink-mute", "@DEFAULT_SINK@", "toggle", NULL };
-static const char *up_vol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+10%", NULL };
-static const char *down_vol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-10%", NULL };
+static const char *mute_vol[] = { "vol_mute.zsh", NULL };
+static const char *up_vol[] = { "vol_up.zsh", NULL };
+static const char *down_vol[] = { "vol_down.zsh", NULL };
 
 static const char *goal_kraken[] = { "mpg123", "/home/avery/audio/kraken.mp3", NULL };
 static const char *goal_torrent[] = { "mpg123", "/home/avery/audio/torrent.mp3", NULL };
@@ -120,6 +120,7 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_AudioMute, spawn,   {.v = mute_vol } },
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = down_vol } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = up_vol }   },
+
 	{ MODKEY|ShiftMask,             XK_k,       spawn,          { .v = goal_kraken } },
 	{ MODKEY|ShiftMask,             XK_t,       spawn,          { .v = goal_torrent } },
 };
