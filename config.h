@@ -76,6 +76,9 @@ static const char *mute_vol[] = { "vol_mute.zsh", NULL };
 static const char *up_vol[] = { "vol_up.zsh", NULL };
 static const char *down_vol[] = { "vol_down.zsh", NULL };
 
+static const char *up_brightness[] = { "brightness_up.zsh", NULL };
+static const char *down_brightness[] = { "brightness_down.zsh", NULL };
+
 static const char *goal_kraken[] = { "mpg123", "/home/avery/audio/kraken.mp3", NULL };
 static const char *goal_torrent[] = { "mpg123", "/home/avery/audio/torrent.mp3", NULL };
 
@@ -116,10 +119,14 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
-	/* media keys */
+	/* audio keys */
 	{ 0,                            XF86XK_AudioMute, spawn,   {.v = mute_vol } },
 	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = down_vol } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = up_vol }   },
+
+	/* brightness keys */
+	{ 0,                            XF86XK_MonBrightnessUp, spawn, {.v = up_brightness} },
+	{ 0,                            XF86XK_MonBrightnessDown, spawn, { .v = down_brightness } },
 
 	{ MODKEY|ShiftMask,             XK_k,       spawn,          { .v = goal_kraken } },
 	{ MODKEY|ShiftMask,             XK_t,       spawn,          { .v = goal_torrent } },
