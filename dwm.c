@@ -2163,5 +2163,6 @@ main(int argc, char *argv[])
 	run();
 	cleanup();
 	XCloseDisplay(dpy);
+	terminate_autostart();
 	return EXIT_SUCCESS;
 }
