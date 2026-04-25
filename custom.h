@@ -23,3 +23,9 @@
  * set the path to your preferred interpreter with `DWM_AUTOSTART_INTERPRETER`
  */
 void autostart(void);
+
+/*
+ * terminate all processes in the autostart group.
+ * return: 0 for success, or an error number.
+ */
+int terminate_autostart(void);
