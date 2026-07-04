@@ -15,4 +15,4 @@ picom &
 feh --bg-fill "$HOME/backgrounds/torrent.jpg"
 
 # GPU Profile loading
-corectrl --minimize-systray
+corectrl --minimize-systray &
