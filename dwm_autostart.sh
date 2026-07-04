@@ -13,3 +13,6 @@ picom &
 
 # set desktop background
 feh --bg-fill "$HOME/backgrounds/torrent.jpg"
+
+# GPU Profile loading
+corectrl --minimize-systray
